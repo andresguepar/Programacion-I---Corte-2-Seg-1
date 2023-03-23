@@ -1,0 +1,45 @@
+package Ejercicio7.Controller;
+
+import Ejercicio7.Modelo.Employee;
+import Ejercicio7.View.EmployeeView;
+
+public class EmployeeController {
+    private Employee model;
+    private EmployeeView view;
+
+
+    public EmployeeController(Employee model, EmployeeView view) {
+        this.model = model;
+        this.view = view;
+    }
+
+    // getter and setter methods
+    public void setEmployeeName(String name){
+        model.setName(name);
+    }
+
+    public String getEmployeeName(){
+        return model.getName();
+    }
+
+    public void setEmployeeId(String id){
+        model.setId(id);
+    }
+
+    public String getEmployeeId(){
+        return model.getId();
+    }
+
+    public void setEmployeeDepartment(String Department){
+        model.setDepartment(Department);
+    }
+
+    public String getEmployeeDepartment(){
+        return model.getDepartment();
+    }
+
+    // method to update view
+    public void updateView() {
+        view.printEmployeeDetails(model.getName(), model.getId(), model.getDepartment());
+    }
+}
